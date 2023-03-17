@@ -3,7 +3,7 @@
 if [ $SOURCE_BRANCH != "master" ]; then
     HADOOP_VERSION=$SOURCE_BRANCH
 else
-    HADOOP_VERSION=2.9.1
+    HADOOP_VERSION=2.10.2
 fi
 
 echo "Building $IMAGE_NAME for Hadoop $HADOOP_VERSION..."

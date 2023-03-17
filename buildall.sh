@@ -8,6 +8,8 @@ if [ $# -gt 0 ]; then
     else
         HADOOP_TAG=${HADOOP_TAG:-"latest"}
     fi
+else
+    HADOOP_TAG=$HADOOP_VERSION
 fi
 
 if [ -z ${HADOOP_VERSION+x} ]; then
@@ -18,5 +20,5 @@ fi
 for i in hadoop namenode datanode resourcemanager nodemanager historyserver spark; do
     echo Building $i
     [ "$i" = "hadoop" ] && name="hadoop" || name="hadoop-$i"
-    ( cd $i && docker build --build-arg HADOOP_VERSION=$HADOOP_VERSION --build-arg HADOOP_TAG=$HADOOP_TAG -t infotechsoft/$name:$HADOOP_TAG . )
+    ( cd $i && docker build --build-arg HADOOP_VERSION=$HADOOP_VERSION --build-arg HADOOP_TAG=$HADOOP_TAG -t uhopper-hadoop-docker/$name:$HADOOP_TAG . )
 done

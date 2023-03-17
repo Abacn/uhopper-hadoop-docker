@@ -1,5 +1,5 @@
 ARG HADOOP_TAG
-FROM infotechsoft/hadoop:${HADOOP_TAG}
+FROM uhopper-hadoop-docker/hadoop:${HADOOP_TAG}
 
 ADD run.sh /run.sh
 RUN chmod a+x /run.sh

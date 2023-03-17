@@ -1,5 +1,5 @@
 ARG HADOOP_TAG
-FROM infotechsoft/hadoop:${HADOOP_TAG}
+FROM uhopper-hadoop-docker/hadoop:${HADOOP_TAG}
 
 ARG SPARK_VERSION=2.3.1
 ENV SPARK_VERSION ${SPARK_VERSION}
